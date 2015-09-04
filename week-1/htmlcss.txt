@@ -1,0 +1,58 @@
+
+
+At a high level, what is the purpose of HTML and CSS? How do the two differ?
+
+HTML bevat de inhoud van de pagina. CSS zorgt voor de opmaak
+
+
+
+What is the purpose of assigning a “class” to an HTML element? What is the difference between a “class” and an “id”? How would one select a division (div) element with class “box” using CSS?
+
+Class is classificeren, dus je kunt meerdere elementen van een class hebben op een pagina. Een id is uniek
+
+
+
+List 5 different HTML elements and provide a short description of the function of each.
+
+<h1> heading level 1. Grootste kop
+<p> paragraph. Tekst paragraaf
+<ul> unordered list. Voor opsommingen en indeling
+<div> standaard container
+<ol> ordered list. Opsomming met getallen
+
+
+
+What is the difference between margin and padding?
+
+margin is de afstand van buiten de box en padding de afstand binnen de border.
+
+
+
+Consider the Gmail Inbox interface. How is the site functionally divided? Create a nested list representing this functional division. Don’t worry about extremely fine details; this should help you start:
+
+ page
+   top bar
+       Google logo
+       search bar
+       search button
+   tob bar 2
+       gmail dropdown menu
+          gmail
+          contacten
+          taken
+       selecteren
+       vernieuwen
+       meer
+       etc.
+   left side bar
+       opstellen
+       inbox
+       met ster
+       belangrijk
+       verzonden berichten
+       etc.
+   inbox
+       email 1
+       email 2
+       etc.
+       
