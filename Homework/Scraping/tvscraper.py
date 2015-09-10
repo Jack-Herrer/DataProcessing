@@ -32,20 +32,30 @@ def extract_tvseries(dom):
         dom=web.Element(html_data)
         return dom
 
-    #
+    # Filter out required info
     def parse_dom(dom):
         result=[]
-        for tv_series in dom.by_tag('td.title'):    
+
+        # iterate all data per title
+        for tv_series in dom.by_tag('td.title'):
+
+            # get titles and genres
             title = tv_series.by_tag('a')[0].content
             genres = tv_series.by_tag('span.genre')[0].by_tag('a')
             genres = "|".join([g.content for g in genres])
+
+            # get runtime but filter out non aplicables
             try:
                 runtime = tv_series.by_tag('span.runtime')[0].content
             except:
                 runtime = "NA"
+
+            # Get rating and artists
             rating = tv_series.by_tag('span.value')[0].content
             artists = tv_series.by_tag('span.credit')[0].by_tag('a')
             artists = "|".join([a.content for a in artists])
+
+            # append data to results
             temp_res=[]
             temp_res.extend([title, genres, runtime, rating, artists])
             result.append(temp_res)
@@ -64,9 +74,8 @@ def save_csv(f, tvseries):
     '''
     Output a CSV file containing highest ranking TV-series.
     '''
-    for row in tvseries:
-        writer = csv.writer(f)
-        writer.writerow(['Title', 'Ranking', 'Genre', 'Actors', 'Runtime'])
+    writer = csv.writer(f)
+    writer.writerow(['Title', 'Ranking', 'Genre', 'Actors', 'Runtime'])
     # ADD SOME CODE OF YOURSELF HERE TO WRITE THE TV-SERIES TO DISK
 
 if __name__ == '__main__':
